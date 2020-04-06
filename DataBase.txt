@@ -1,0 +1,80 @@
+USE [CliffordMarshall]
+GO
+
+/****** Object:  Table [dbo].[Address]    Script Date: 2/22/2020 12:01:25 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Address](
+	[AddID] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[StreetAddress] [nvarchar](60) NULL,
+	[City] [nvarchar](15) NULL,
+	[State] [nvarchar](20) NULL,
+	[Country] [nvarchar](15) NULL,
+	[ZipCode] [nvarchar](10) NULL,
+	[Type] [nvarchar](20) NULL
+) ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[Applicant](
+	[UserID] [int] NOT NULL,
+	[FirstName] [nvarchar](50) NOT NULL,
+	[MiddleName] [nvarchar](50) NULL,
+	[LastName] [nvarchar](50) NOT NULL,
+	[StreetAddress] [nvarchar](50) NULL,
+	[City] [nvarchar](50) NULL,
+	[State] [nvarchar](50) NULL,
+	[ZipCode] [nvarchar](50) NULL,
+	[Country] [nvarchar](50) NULL,
+	[Phone] [nvarchar](max) NULL,
+	[Birthdate] [nvarchar](50) NULL,
+	[DigitPin] [nvarchar](max) NULL,	
+	[Appimg] [image] NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+CREATE TABLE [dbo].[Choices](
+	[ChoiceID] [int] NOT NULL,
+	[QuestionID] [int] NULL,
+	[UserID] [int] NOT NULL,
+	[ChoiceLetter] [nvarchar](50) NULL,
+	[ChoiceText] [nvarchar](100) NULL
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Image](
+	[ImageID] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[Image_name] [nvarchar](128) NOT NULL
+) ON [PRIMARY]
+
+GO
+CREATE TABLE [dbo].[Users](
+	[UserID] [int] NOT NULL,
+	[FirstName] [varchar](55) NOT NULL,
+	[LastName] [varchar](55) NOT NULL,
+	[Username] [varchar](55) NOT NULL,
+	[PASSWORD] [varchar](55) NULL,
+	[Time_Logged_in] [datetime] NOT NULL,
+	[Time_Logged_Out] [datetime] NOT NULL,
+	[Date_Logged_in] [datetime] NOT NULL,
+	[E_MAIL] [varchar](55) NOT NULL
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[QuestionsDisplay](
+	[QuestionID] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[Answer] [nvarchar](50) NULL,
+	[AnswerID] [int] NULL,
+	[QuestionNumber] [int] NULL,
+	[QuestionText] [nvarchar](200) NULL
+) ON [PRIMARY]
+
+GO

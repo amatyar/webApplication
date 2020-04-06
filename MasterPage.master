@@ -1,0 +1,36 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+     <table style="width:100%">
+        <tr>
+        <td colspan="2" style="height: 200px"> <asp:Image id="image1" runat="server" ImageUrl="~/logo_realabc.gif" style="width:100%"/></td> 
+    </tr>
+    <tr>
+    <td style="width: 95px">
+        <asp:Menu ID="Menu1" runat="server" Height="216px" Width="79px">
+            <Items>
+                <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/RegisterAccount.aspx" Text="RegisterAccount" Value="Create An Account">
+                </asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Login.aspx" Text="Login" Value="Login"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/AboutUS.aspx" Text="About us" Value="About us"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Contact.aspx" Text="Contact" Value="Contact"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+    </td>
+    <td>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder></td>
+        </tr></table>
+    </div>
+    </form>
+</body>
+</html>
